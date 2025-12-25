@@ -7,17 +7,17 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    return view('503error');
+    return view('error/503');
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('auth/login');
 });
 
 Route::get('/sign-up', function () {
-    return view('register');
+    return view('auth/register');
 });
 
 Route::get('/forget-password', function () {
-    return view('forgetPass');
+    return view('auth/forgetPass');
 });
