@@ -5,10 +5,10 @@ use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('503error');
+    return view('error/503');
 });
 
-// Song Create
+
 Route::get('/songs/create', [SongController::class, 'create'])->name('songs.create');
 
 // Mood Route
@@ -18,3 +18,17 @@ Route::post('/moods', [MoodController::class, 'store'])->name('moods.store');
 Route::get('/moods/{mood}/edit', [MoodController::class, 'edit'])->name('moods.edit');
 Route::put('/moods/{mood}', [MoodController::class, 'update'])->name('moods.update');
 Route::delete('/moods/{mood}', [MoodController::class, 'destroy'])->name('moods.destroy');
+
+
+Route::get('/login', function () {
+    return view('auth/login');
+});
+
+Route::get('/sign-up', function () {
+    return view('auth/register');
+});
+
+Route::get('/forget-password', function () {
+    return view('auth/forgetPass');
+});
+
