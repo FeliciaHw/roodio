@@ -12,7 +12,7 @@
 <body>
     <div class='grid w-screen h-screen bg-primary-100 overflow-hidden justify-items-center items-center mx-auto'>
         <div id="particle-canvas"></div>
-        <div class='w-xs h-1/2 border-secondary-happy-50 border-3 bg-white/75 hover:bg-white/85 transition-colors active:bg-white/85 ease-linear duration-150 rounded-4xl col-start-1 row-start-1 z-10 flex flex-col items-center justify-around shadow-xl shadow-secondary-happy-50/40 md:w-md md:h-[32rem]'>
+        <div class='w-xs h-[26rem] border-secondary-happy-50 border-3 bg-white/75 hover:bg-white/85 transition-colors active:bg-white/85 ease-linear duration-150 rounded-4xl col-start-1 row-start-1 z-10 flex flex-col items-center justify-around shadow-xl shadow-secondary-happy-50/40 md:w-md md:h-[32rem]'>
             <div class='w-[inherit] animate-pulse mt-4 flex flex-row-max h-max items-center justify-center font-primary text-title font-bold text-primary-85 md:text-hero'>
                 <span>L</span>
                 <div class='rounded-full w-12 h-12 bg-primary-85 mx-2 flex justify-center items-center md:w-16 md:h-16'>
