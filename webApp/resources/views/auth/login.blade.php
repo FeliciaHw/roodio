@@ -27,10 +27,10 @@
                     @csrf
                     <div class='flex flex-col w-3xs mb-8 md:w-sm md:mb-11'>
                         <label for="username" class='mb-1 text-primary-70 md:mb-1.5'>
-                            <img src="{{ asset('assets/icon/user.svg') }}" alt="user" class='w-5 inline'>
+                            <img src="{{ asset('assets/icons/user.svg') }}" alt="user" class='w-5 inline'>
                             <p class='align-middle inline'>Username</p>
                         </label>
-                        <input type="text" name="username" id="username" autocomplete="off" required value="{{ old('username') }}" placeholder="Input your username..." class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small'>
+                        <input type="text" name="username" id="username" autocomplete="off" required value="{{ old('username') }}" placeholder="Input your username..." class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small'>
                         @error('username')
                             <div class="text-error-moderate">
                                 {{ $message }}
@@ -39,16 +39,16 @@
                     </div>
                     <div class='flex flex-col w-3xs relative mb-10 md:w-sm md:mb-11'>
                         <label for="password" class='mb-1 text-primary-70 relative'>
-                            <img src="{{ asset('assets/icon/password.svg') }}" alt="password" class='w-5 inline'>
+                            <img src="{{ asset('assets/icons/password.svg') }}" alt="password" class='w-5 inline'>
                             <p class='align-middle inline'>
                                 Password
                                 <a href='/forget-password' class='right-0 top-1/2 -translate-y-1/2 absolute text-xs font-bold text-secondary-sad-100 md:text-micro hover:text-primary-50'>Forget Password?</a>
                             </p>
 
                         </label>
-                        <input type="password" name="password" id="password" autocomplete="off" required placeholder="Input your password..." class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small pr-8'>
+                        <input type="password" name="password" id="password" autocomplete="off" required placeholder="Input your password..." class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small pr-8'>
                         <button type='button' id='showPass' class='w-4 h-4 absolute right-1.5 bottom-1.5 flex items-center justify-center cursor-pointer md:bottom-2 md:right-2'>
-                            <img src="{{ asset('assets/icon/eye-closed.svg') }}" alt="eye-closed">
+                            <img src="{{ asset('assets/icons/eye-closed.svg') }}" alt="eye-closed">
                             <span class='absolute invisible' id='eye-open'>&#128065;</span>
                         </button>
                         @error('password')

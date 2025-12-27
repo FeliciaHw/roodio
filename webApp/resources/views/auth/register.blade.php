@@ -16,39 +16,48 @@
         <div class='absolute z-10 border-primary-30 border-4 hover:bg-secondary-happy-10/85 transition-colors active:bg-secondary-happy-10/80 ease-linear duration-150 rounded-4xl bg-secondary-happy-10/70 w-sm h-max top-[50%] -translate-y-[50%] p-8 pt-5 font-secondaryAndButton rounded-3xl shadow-xl shadow-primary-20/40 lg:w-md'>
             <div class='flex flex-col items-center gap-1'>
                 <img src="{{ asset('assets/logo-with-text.png') }}" alt="logo" class='w-24 drop-shadow-sm drop-shadow-primary-50'>
-                <p class='font-primary text-subtitle font-bold tracking-widest text-primary-85'>SIGN UP</p>
+                <img src="{{ asset('assets/icons/otp.svg') }}" alt="logo" class='w-24 hidden'>
+                <p class='font-primary text-subtitle font-bold text-primary-85'>
+                    <span class='tracking-widest hidden'>SIGN UP</span>
+                    <span class='hidden'>OTP VERIFICATION</span>
+                    <span class='tracking-wider'>USER ACCOUNT</span>
+                </p>
+                <p class='text-center text-primary-50 text-small mb-4'>
+                    <span class='-mt-1.5 hidden'>Let's join for amazing experience!</span>
+                    <span class='mt-6 hidden'>Thank you for signing up on ROODIO! We have sent you the 6-digit code <b>to your email</b>. Please enter the code to continue this signing up process.</span>
+                    <span class='-mt-1.5'>Awesome! One step left with ROODIO!</span>
+                </p>
             </div>
-            <p class='text-center text-primary-50 text-small mb-4 -mt-1.5'>Let's join for amazing experience!</p>
-            <div>
+            <div class='hidden'>
                 <form action="" method="POST" id='identity'>
                     <div class='flex flex-col mb-9'>
                         <label for="fullname" class='text-body-size flex flex-row mb-2'>
-                            <img src="{{ asset('assets/icon/name.svg') }}" alt="name" class='w-6 mr-1'>
-                            <p class='text-primary-85 text-body-size'>Fullname</p>
+                            <img src="{{ asset('assets/icons/name.svg') }}" alt="name" class='w-6 mr-1'>
+                            <p class='text-primary-85 text-body-size'>Fullname<span class='text-danger'>*</span></p>
                         </label>
-                        <input type="text" name="fullname" id="fullname" autocomplete="off" placeholder="Ex: John Doe" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small' />
+                        <input type="text" name="fullname" id="fullname" autocomplete="off" placeholder="Ex: John Doe" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small'>
                     </div>
                     <div class='flex flex-col mb-9'>
                         <label for="email" class='text-body-size flex flex-row mb-2'>
-                            <img src="{{ asset('assets/icon/email.svg') }}" alt="email" class='w-6 mr-1'>
-                            <p class='text-primary-85 text-body-size'>Email</p>
+                            <img src="{{ asset('assets/icons/email.svg') }}" alt="email" class='w-6 mr-1'>
+                            <p class='text-primary-85 text-body-size'>Email<span class='text-danger'>*</span></p>
                         </label>
-                        <input type="email" name="email" id="email" autocomplete="off" placeholder="Ex: john.doe@gmail.com" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small'>
+                        <input type="email" name="email" id="email" inputmode="email" autocomplete="off" placeholder="Ex: john.doe@gmail.com" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small'>
                     </div>
                     <div class='flex flex-row items-start justify-between'>
                         <div class='flex flex-col mb-10'>
                             <label for="dob" class='text-body-size flex flex-row mb-2'>
-                                <img src="{{ asset('assets/icon/date.svg') }}" alt="email" class='w-6 mr-1'>
-                                <p class='text-primary-85 text-body-size'>Date of Birth</p>
+                                <img src="{{ asset('assets/icons/date.svg') }}" alt="email" class='w-6 mr-1'>
+                                <p class='text-primary-85 text-body-size'>Date of Birth<span class='text-danger'>*</span></p>
                             </label>
-                            <input datepicker id="default-datepicker" name='dob' type="text" autocomplete="off" placeholder="mm/dd/yyyy" class="not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 w-32 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small lg:w-42">
+                            <input datepicker id="default-datepicker" name='dob' type="text" autocomplete="off" placeholder="mm/dd/yyyy" class="not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 w-32 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small lg:w-42">
                         </div>
                         <div class='flex flex-col mb-10'>
                             <label for="gender" class='text-body-size flex flex-row mb-2'>
-                                <img src="{{ asset('assets/icon/gender.svg') }}" alt="gender" class='w-6 mr-1'>
-                                <p class='text-primary-85'>Gender</p>
+                                <img src="{{ asset('assets/icons/gender.svg') }}" alt="gender" class='w-6 mr-1'>
+                                <p class='text-primary-85'>Gender<span class='text-danger'>*</span></p>
                             </label>
-                            <select name="gender" id="gender" autocomplete="off" class="gender-select w-40 text-small outline-none border-b rounded-md px-1.5 py-1 border-shadedOfGray-50 text-shadedOfGray-60 italic focus:border-amber-600 focus:border-b-2 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 lg:w-44">
+                            <select name="gender" id="gender" autocomplete="off" class="gender-select w-40 text-small outline-none border-b rounded-md px-1.5 py-1 border-shadedOfGray-50 text-shadedOfGray-60 italic focus:border-secondary-happy-100 focus:border-b-2 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 lg:w-44">
                                 <option value="" disabled hidden selected>Gender</option>
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -58,10 +67,10 @@
                     </div>
                     <div class='flex flex-col mb-11'>
                         <label for="country" class='text-body flex flex-row mb-2'>
-                                <img src="{{ asset('assets/icon/country.svg') }}" alt="country" class='w-6 mr-1'>
-                                <p class='text-primary-85'>Country</p>
+                                <img src="{{ asset('assets/icons/country.svg') }}" alt="country" class='w-6 mr-1'>
+                                <p class='text-primary-85'>Country<span class='text-danger'>*</span></p>
                         </label>
-                        <select autocomplete="country" id="country" name="country" autocomplete="off" class="country-select w-full mt-0.5 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 text-shadedOfGray-60 italic focus:border-amber-600 focus:border-b-2 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body md:h-8">
+                        <select autocomplete="country" id="country" name="country" autocomplete="off" class="country-select w-full mt-0.5 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 text-shadedOfGray-60 italic focus:border-secondary-happy-100 focus:border-b-2 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body md:h-8">
                             <option value="" disabled hidden selected>Select your country...</option>
                             <option value="AF">Afghanistan</option>
                             <option value="AX">Åland Islands</option>
@@ -318,27 +327,65 @@
                         </select>
                     </div>
                     <div>
-                        <button type="submit" class='text-smallBtn font-bold w-full font-secondaryAndButton bg-primary-10 text-primary-100 rounded-2xl py-1 mb-2 cursor-pointer hover:bg-primary-50 hover:text-white ease-in-out duration-150'>Sign Up</button>
+                        <button type="submit" class='text-smallBtn font-bold w-full font-secondaryAndButton bg-primary-10 text-primary-100 rounded-2xl py-1 mb-2 cursor-pointer hover:bg-primary-50 hover:text-white ease-in-out duration-150' form='identity'>Sign Up</button>
                         <p class='text-micro text-center md:text-small'>Already have account? <a href="/login" class='font-bold text-secondary-sad-100 hover:text-primary-50'>Let's Login!</a></p>
                     </div>
                 </form>
             </div>
+
             <div class='hidden'>
+                <form action="" method="POST" id='otp'>
+                    <div class='mt-4 mb-12 flex flex-row justify-center gap-4 items-center'>
+                        <input type="text" maxlength="1" inputmode="numeric" name="otp-1" id="otp-1" autocomplete="off" placeholder="*" class='not-placeholder-shown:bg-white bg-shadedOfGray-20 text-center text-paragraph outline-none border-2 font-bold rounded-md px-1.5 py-0.5 w-10 h-12 border-primary-30 placeholder:text-paragraph focus:border-secondary-happy-100 focus:bg-secondary-happy-20/50 ease-in-out duration-150'>
+                        <input type="text" maxlength="1" inputmode="numeric" name="otp-2" id="otp-2" autocomplete="off" placeholder="*" class='not-placeholder-shown:bg-white bg-shadedOfGray-20 text-center text-paragraph outline-none border-2 font-bold rounded-md px-1.5 py-0.5 w-10 h-12 border-primary-30 placeholder:text-paragraph focus:border-secondary-happy-100 focus:bg-secondary-happy-20/50 ease-in-out duration-150'>
+                        <input type="text" maxlength="1" inputmode="numeric" name="otp-3" id="otp-3" autocomplete="off" placeholder="*" class='not-placeholder-shown:bg-white bg-shadedOfGray-20 text-center text-paragraph outline-none border-2 font-bold rounded-md px-1.5 py-0.5 w-10 h-12 border-primary-30 placeholder:text-paragraph focus:border-secondary-happy-100 focus:bg-secondary-happy-20/50 ease-in-out duration-150'>
+                        <input type="text" maxlength="1" inputmode="numeric" name="otp-4" id="otp-4" autocomplete="off" placeholder="*" class='not-placeholder-shown:bg-white bg-shadedOfGray-20 text-center text-paragraph outline-none border-2 font-bold rounded-md px-1.5 py-0.5 w-10 h-12 border-primary-30 placeholder:text-paragraph focus:border-secondary-happy-100 focus:bg-secondary-happy-20/50 ease-in-out duration-150'>
+                        <input type="text" maxlength="1" inputmode="numeric" name="otp-5" id="otp-5" autocomplete="off" placeholder="*" class='not-placeholder-shown:bg-white bg-shadedOfGray-20 text-center text-paragraph outline-none border-2 font-bold rounded-md px-1.5 py-0.5 w-10 h-12 border-primary-30 placeholder:text-paragraph focus:border-secondary-happy-100 focus:bg-secondary-happy-20/50 ease-in-out duration-150'>
+                        <input type="text" maxlength="1" inputmode="numeric" name="otp-6" id="otp-6" autocomplete="off" placeholder="*" class='not-placeholder-shown:bg-white bg-shadedOfGray-20 text-center text-paragraph outline-none border-2 font-bold rounded-md px-1.5 py-0.5 w-10 h-12 border-primary-30 placeholder:text-paragraph focus:border-secondary-happy-100 focus:bg-secondary-happy-20/50 ease-in-out duration-150'>
+                    </div>
+                    <button type='submit' form='otp' class='text-smallBtn font-bold w-full font-secondaryAndButton bg-primary-10 text-primary-100 rounded-2xl py-1 mb-2 cursor-pointer hover:bg-primary-50 hover:text-white ease-in-out duration-150'>Verify Account</button>
+                </form>
+            </div>
+
+            <div class=''>
                 <form action="" method="POST" id='account'>
-                    <div>
-                        <label for="username">Your Username</label>
-                        <input type="text" name='username' id='username' value='awikwok'>
+                    <div class='flex flex-col mb-9'>
+                        <label for="username" class='text-body-size flex flex-row mb-1'>
+                            <img src="{{ asset('assets/icons/user.svg') }}" alt="username" class='w-6 mr-1'>
+                            <p class='text-primary-85 text-body-size'>Your Username<span class='text-danger'>*</span></p>
+                        </label>
+                        <p class='text-small text-shadedOfGray-70 font-bold'>You can customize your username.</p>
+                        <input type="text" name="username" id="username" autocomplete="off" value="user321_" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small'>
+                    </div>
+                    <div class='flex flex-col mb-9'>
+                        <label for="password" class='text-body-size flex flex-row mb-2'>
+                            <img src="{{ asset('assets/icons/password.svg') }}" alt="password" class='w-6 mr-1'>
+                            <p class='text-primary-85 text-body-size'>Your Password<span class='text-danger'>*</span></p>
+                        </label>
+                        <div class='relative'>
+                            <input type="password" name="password" id="password" autocomplete="off" placeholder="Create your password..." class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small pr-8 w-full'>
+                            <button type='button' id='showPass' class='w-4 h-4 absolute z-4 right-1.5 bottom-1.5 flex items-center justify-center cursor-pointer md:bottom-2 md:right-2'>
+                                <img src="{{ asset('assets/icons/eye-closed.svg') }}" alt="eye-closed">
+                                <span class='absolute invisible' id='eye-open'>&#128065;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class='flex flex-col mb-10'>
+                        <label for="passwordConfirm" class='text-body-size flex flex-row mb-2'>
+                            <img src="{{ asset('assets/icons/password.svg') }}" alt="password" class='w-6 mr-1'>
+                            <p class='text-primary-85 text-body-size'>Password Confirmation<span class='text-danger'>*</span></p>
+                        </label>
+                        <div class='relative'>
+                            <input type="text" name="fullname" id="fullname" autocomplete="off" placeholder="Input again your password..." class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small pr-8 w-full'>
+                            <button type='button' id='showPass' class='w-4 h-4 absolute z-4 right-1.5 bottom-1.5 flex items-center justify-center cursor-pointer md:bottom-2 md:right-2'>
+                                <img src="{{ asset('assets/icons/eye-closed.svg') }}" alt="eye-closed">
+                                <span class='absolute invisible' id='eye-open'>&#128065;</span>
+                            </button>
+                        </div>
+
                     </div>
                     <div>
-                        <label for="password">Your Password</label>
-                        <input type="password" name='password' id='password'>
-                    </div>
-                    <div>
-                        <label for="confirm-password">Confirm Your Password</label>
-                        <input type="password" name='confirm-password' id='passConfirm'>
-                    </div>
-                    <div>
-                        <button type='submit' form='account'>Create Account</button>
+                        <button type='submit' form='account' class='text-smallBtn font-bold w-full font-secondaryAndButton bg-primary-10 text-primary-100 rounded-2xl py-1 mb-2 cursor-pointer hover:bg-primary-50 hover:text-white ease-in-out duration-150'>Create Account</button>
                     </div>
                 </form>
             </div>
