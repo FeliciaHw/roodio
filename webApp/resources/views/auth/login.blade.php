@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ROODIO - Login</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script type="text/javascript" src="{{ asset('js/bg-effect.js') }}" defer></script>
-    <script type="text/javascript" src="{{ asset('js/particle-network.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/design/login-bg.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/design/particle-network.js') }}" defer></script>
 </head>
 <body>
     <div class='grid w-screen h-screen bg-primary-100 overflow-hidden justify-items-center items-center mx-auto'>
@@ -21,8 +21,8 @@
                 <span class='tracking-[.5rem]'>GI</span>
                 <span>N</span>
             </div>
-            <p class='font-secondaryAndButton -mt-3 text-small text-primary-50 md:text-body md:-mt-9 md:tracking-[.05rem]'>Welcome back to ROODIO!</p>
-            <div class='font-secondaryAndButton text-body flex justify-center w-75 h-max'>
+            <p class='font-secondaryAndButton -mt-3 text-small text-primary-50 md:text-body-size md:-mt-9 md:tracking-[.05rem]'>Welcome back to ROODIO!</p>
+            <div class='font-secondaryAndButton text-body-size flex justify-center w-75 h-max'>
                 <form action="{{ route('auth.login') }}" method='POST'>
                     @csrf
                     <div class='flex flex-col w-3xs mb-8 md:w-sm md:mb-11'>
@@ -30,7 +30,7 @@
                             <img src="{{ asset('assets/icon/user.svg') }}" alt="user" class='w-5 inline'>
                             <p class='align-middle inline'>Username</p>
                         </label>
-                        <input type="text" name="username" id="username" value="{{ old('username') }}" placeholder="Input your username..." class='not-placeholder-shown:bg-accent-20/60 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body md:h-8 md:placeholder:text-small'>
+                        <input type="text" name="username" id="username" autocomplete="off" required value="{{ old('username') }}" placeholder="Input your username..." class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small'>
                         @error('username')
                             <div class="text-error-moderate">
                                 {{ $message }}
@@ -46,7 +46,7 @@
                             </p>
 
                         </label>
-                        <input type="password" name="password" id="password" placeholder="Input your password..." class='not-placeholder-shown:bg-accent-20/60 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body md:h-8 md:placeholder:text-small'>
+                        <input type="password" name="password" id="password" autocomplete="off" required placeholder="Input your password..." class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-amber-600 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small pr-8'>
                         <button type='button' id='showPass' class='w-4 h-4 absolute right-1.5 bottom-1.5 flex items-center justify-center cursor-pointer md:bottom-2 md:right-2'>
                             <img src="{{ asset('assets/icon/eye-closed.svg') }}" alt="eye-closed">
                             <span class='absolute invisible' id='eye-open'>&#128065;</span>

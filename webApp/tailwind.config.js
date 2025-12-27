@@ -121,7 +121,7 @@ export default {
           lineHeight: '2.25rem',
         }],
 
-        'body': ['1.167rem', {
+        'body-size': ['1.167rem', {
           lineHeight: '1.75rem',
         }],
 

@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 @config "../../tailwind.config.js";
+@source "../../node_modules/flowbite-datepicker";
+/* @import "flowbite/src/themes/default"; */
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -19,4 +21,11 @@
 @font-face {
     font-family: 'poppins';
     src: url('../fonts/poppins.ttf');
+}
+
+@layer components {
+  .datepicker-picker {
+    background-color: #fff;
+    zoom: 0.8;
+  }
 }
