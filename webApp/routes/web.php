@@ -6,7 +6,7 @@ use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('errors/503');
 })->name('welcome');
 
 Route::get('/songs/create', [SongController::class, 'create'])->name('songs.create');
@@ -23,7 +23,7 @@ Route::get('/moods/{mood}/edit', [MoodController::class, 'edit'])->name('moods.e
 Route::put('/moods/{mood}', [MoodController::class, 'update'])->name('moods.update');
 Route::delete('/moods/{mood}', [MoodController::class, 'destroy'])->name('moods.destroy');
 
-Route::get('/sign-up', function () {
+Route::get('/sign-up', function () {    
     return view('auth/register');
 });
 

@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     canvasDiv.style.width = '100%';
-    canvasDiv.style.height = '100%';
     canvasDiv.classList.add('absolute', 'z-1');
 
     const options = {
