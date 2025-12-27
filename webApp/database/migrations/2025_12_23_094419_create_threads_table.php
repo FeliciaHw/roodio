@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('title', 100);
             $table->string('content', 255);
             $table->dateTime('datePost');
-            $table->boolean('isReplyable');
+            $table->boolean('isReplyable')->default(false);
             $table->timestamps();
         });
     }
