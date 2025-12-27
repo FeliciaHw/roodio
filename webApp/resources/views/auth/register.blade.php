@@ -325,13 +325,6 @@
                 </form>
             </div>
             <div class='hidden'>
-                <form action="" method="POST" id='otp'>
-                    <p>OTP</p>
-                    <input type="text" id='otp'>
-                    <button type='submit' form='otp'>Verification</button>
-                </form>
-            </div>
-            <div class='hidden'>
                 <form action="" method="POST" id='account'>
                     <div>
                         <label for="username">Your Username</label>
