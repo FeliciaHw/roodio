@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MoodController;
 use App\Http\Controllers\SongController;
 use Illuminate\Support\Facades\Route;
@@ -8,8 +9,11 @@ Route::get('/', function () {
     return view('errors/503');
 });
 
-
 Route::get('/songs/create', [SongController::class, 'create'])->name('songs.create');
+
+// Auth Route
+Route::get('/login', [AuthController::class, 'loginView'])->name('auth.loginView');
+Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 
 // Mood Route
 Route::get('/moods', [MoodController::class, 'index'])->name('moods.index');
@@ -19,11 +23,6 @@ Route::get('/moods/{mood}/edit', [MoodController::class, 'edit'])->name('moods.e
 Route::put('/moods/{mood}', [MoodController::class, 'update'])->name('moods.update');
 Route::delete('/moods/{mood}', [MoodController::class, 'destroy'])->name('moods.destroy');
 
-
-Route::get('/login', function () {
-    return view('auth/login');
-});
-
 Route::get('/sign-up', function () {
     return view('auth/register');
 });
@@ -31,4 +30,3 @@ Route::get('/sign-up', function () {
 Route::get('/forget-password', function () {
     return view('auth/forgetPass');
 });
-
