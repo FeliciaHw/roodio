@@ -1,4 +1,4 @@
-@extends('layouts/signUp')
+@extends('layouts.signUp')
 
 
 @section('title', 'ROODIO - OTP Authentication')
@@ -34,7 +34,7 @@
                     @php ($idx++)
                 @endwhile
             </div>
-            <div class="text-error-moderate h-3.5 pt-0.5 mt-2 text-micro md:text-small text-center">
+            <div class="error-message">
                 @error('otp')
                     {{ $message }}
                 @enderror
