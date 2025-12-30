@@ -8,8 +8,8 @@
 
 
 @section('bodyContent')
-    <div id="particle-canvas" class='min-h-lvh h-fit'></div>
-    <div class='absolute z-10 w-full h-fit flex justify-center items-center top-0 pb-52'>
+    <div id="particle-canvas" class='min-h-lvh h-fit relative z-1'></div>
+    <div class='absolute z-10 w-full h-fit flex justify-center items-center top-6 pb-6'>
         <div class='border-primary-30 border-4 rounded-4xl bg-secondary-happy-10/85 w-sm h-max p-5 pt-5 font-secondaryAndButton shadow-xl shadow-primary-20/40 md:w-md lg:w-[30rem]'>
             <div class='flex flex-col items-center gap-1'>
                  @yield('mainImage')
