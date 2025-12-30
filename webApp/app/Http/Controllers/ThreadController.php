@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\Reply;
 use App\Models\Thread;
 use function Symfony\Component\Clock\now;
 use Illuminate\Http\Request;
@@ -73,5 +74,22 @@ class ThreadController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     */
+    public function reply(Request $request, Thread $thread)
+    {
+        $request->validate([
+            'content' => "required|min:2|max:255",
+        ]);
+
+        $reply             = $request->all();
+        $reply['userId']   = Auth::id();
+        $reply['threadId'] = $thread->id;
+
+        Reply::create($reply);
+        return redirect()->route('thread.show', $thread)->with('succes', 'berhasil membuat reply');
     }
 }

@@ -25,7 +25,8 @@ return new class extends Migration
                 ->on('Threads')
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
-            $table->string('type', 20);
+            $table->boolean('isReacted')->default(false);
+            $table->unique(['userId', 'threadId']);
             $table->timestamps();
         });
     }
