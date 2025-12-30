@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -17,7 +18,6 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'id',
         'username',
         'password',
     ];
@@ -46,5 +46,24 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password'          => 'hashed',
         ];
+    }
+
+    protected static function booted()
+    {
+        static::creating(function ($model) {
+
+            $lastId = DB::table('users')
+                ->orderBy('id', 'desc')
+                ->value('id');
+
+            if (! $lastId) {
+                $model->id = 'US-0000001';
+            } else {
+                $number = (int) substr($lastId, 3);
+                $number++;
+
+                $model->id = 'US-' . str_pad($number, 7, '0', STR_PAD_LEFT);
+            }
+        });
     }
 }

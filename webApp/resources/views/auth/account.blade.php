@@ -29,8 +29,8 @@
                 <p class='text-primary-85 text-body-size'>Your Username<span class='text-danger'>*</span></p>
             </label>
             <p class='text-small text-shadedOfGray-70 font-bold'>You can customize your username.</p>
-            <input type="text" name="username" id="username" autocomplete="off" placeholder="Create your username..." value="user321_" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small {{ $errors->has('username') ? 'border-error-dark border-b-2 bg-error-lighten/30' : 'border-shadedOfGray-50' }}'>
-            <div class="error-message">
+            <input type="text" name="username" id="username" autocomplete="off" placeholder="Create your username..." value="{{ $username }}" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small {{ $errors->has('username') ? 'border-error-dark border-b-2 bg-error-lighten/30' : 'border-shadedOfGray-50' }}'>
+            <div class="text-error-moderate h-3 pt-0.5 text-micro md:text-small">
                 @error('username')
                     {{ $message }}
                 @enderror
@@ -55,19 +55,19 @@
             </div>
         </div>
         <div class='flex flex-col mb-8'>
-            <label for="passwordConfirm" class='text-body-size flex flex-row mb-2'>
+            <label for="password_confirmation" class='text-body-size flex flex-row mb-2'>
                 <img src="{{ asset('assets/icons/password.svg') }}" alt="password" class='w-6 mr-1'>
                 <p class='text-primary-85 text-body-size'>Password Confirmation<span class='text-danger'>*</span></p>
             </label>
             <div class='relative'>
-                <input type="password" name="passwordConfirm" id="passwordConfirm" autocomplete="off" placeholder="Input again your password..." class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small pr-8 w-full {{ $errors->has('passwordConfirm') ? 'border-error-dark border-b-2 bg-error-lighten/30' : 'border-shadedOfGray-50' }}'>
+                <input type="password" name="password_confirmation" id="password_confirmation" autocomplete="off" placeholder="Input again your password..." class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small pr-8 w-full {{ $errors->has('password_confirmation') ? 'border-error-dark border-b-2 bg-error-lighten/30' : 'border-shadedOfGray-50' }}'>
                 <button type='button' id='showPassConfirm' class='w-4 h-4 absolute z-4 right-1.5 bottom-1.5 flex items-center justify-center cursor-pointer md:bottom-2 md:right-2'>
                     <img src="{{ asset('assets/icons/eye-closed.svg') }}" alt="eye-closed" id='eye-closed-pass-confirm'>
                     <span class='absolute invisible' id='eye-open-pass-confirm'>&#128065;</span>
                 </button>
             </div>
             <div class="error-message">
-                @error('passwordConfirm')
+                @error('password_confirmation')
                     {{ $message }}
                 @enderror
             </div>

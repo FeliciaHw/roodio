@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title', 'ROODIO')</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
     @stack('style')
+    @livewireScripts
     @stack('script')
 </head>
 <body class="container-body @yield('bodyClass', '')">

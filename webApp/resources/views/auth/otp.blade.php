@@ -23,7 +23,7 @@
 
 
 @section('content')
-    <form action="{{ route('auth.otp') }}" method="POST" id='otp-form'>
+    <form action="{{ route('auth.register.validation') }}" method="POST" id='otp-form'>
         @csrf
         <div class='flex flex-col mt-4 mb-8 otp-container'>
             <div class='flex flex-row justify-center gap-4 items-center'>
@@ -34,11 +34,11 @@
                     @php ($idx++)
                 @endwhile
             </div>
-            <div class="error-message">
-                @error('otp')
-                    {{ $message }}
-                @enderror
-            </div>
+            @if ($errors->has('otp'))
+                <div class="text-error-moderate h-3.5 pt-0.5 mt-2 text-micro md:text-small text-center">
+                    {{ $errors->first('otp') }}
+                </div>
+            @endif
         </div>
         <button type='submit' form='otp-form' class='text-smallBtn font-bold w-full font-secondaryAndButton bg-primary-10 text-primary-100 rounded-2xl py-1 mb-2 cursor-pointer hover:bg-primary-50 hover:text-white ease-in-out duration-150'>Verify Account</button>
         <p class='text-micro text-center md:text-small'>

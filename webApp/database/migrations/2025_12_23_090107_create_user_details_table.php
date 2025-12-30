@@ -23,9 +23,8 @@ return new class extends Migration
             $table->string('email', 255)->unique();
             $table->date('dateOfBirth');
             $table->string('country', 255);
-            $table->boolean('gender');
-            $table->string('profilePhoto');
-            $table->boolean('isActive');
+            $table->boolean('gender')->default(null);
+            $table->string('profilePhoto')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamps();
         });

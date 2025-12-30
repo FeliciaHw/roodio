@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
             'id'       => 'US-0000001',
             'username' => 'andi',
         ]);
+
+        $this->call(RegionSeeder::class);
     }
 }

@@ -35,14 +35,7 @@
                 @enderror
             </div>
 
-            <div class="">
-                <button
-                    class="reaction-btn"
-                    data-thread-id="{{ $thread->id }}"
-                >
-                ❤️ <span class="count">{{ $thread->reactions_count }}</span>
-                </button>
-            </div>
+            <livewire:reaction-button :thread-id="$thread->id" />
         </div>
     </div>
     @empty
