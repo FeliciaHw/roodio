@@ -1,4 +1,4 @@
-@extends('layouts/signUp')
+@extends('layouts.signUp')
 
 
 @section('title', 'ROODIO - Account')
@@ -30,7 +30,7 @@
             </label>
             <p class='text-small text-shadedOfGray-70 font-bold'>You can customize your username.</p>
             <input type="text" name="username" id="username" autocomplete="off" placeholder="Create your username..." value="user321_" class='not-placeholder-shown:bg-accent-20/60 not-placeholder-shown:text-shadedOfGray-100 text-small outline-none border-b rounded-md px-1.5 py-0.5 border-shadedOfGray-50 placeholder:text-micro placeholder:italic focus:border-secondary-happy-100 focus:border-b-2 focus:bg-secondary-happy-20/50 ease-in-out duration-150 hover:bg-shadedOfGray-20/90 md:text-body-size md:h-8 md:placeholder:text-small {{ $errors->has('username') ? 'border-error-dark border-b-2 bg-error-lighten/30' : 'border-shadedOfGray-50' }}'>
-            <div class="text-error-moderate h-3 pt-0.5 text-micro md:text-small">
+            <div class="error-message">
                 @error('username')
                     {{ $message }}
                 @enderror
@@ -48,7 +48,11 @@
                     <span class='absolute invisible' id='eye-open'>&#128065;</span>
                 </button>
             </div>
+<<<<<<< HEAD
+            <div class="error-message">
+=======
             <div class="text-error-moderate h-3 pt-0.5 text-micro md:text-small">
+>>>>>>> 51dadadbc50128a6ab81f4d7091672c9353fd4e3
                 @error('password')
                     {{ $message }}
                 @enderror
@@ -66,7 +70,11 @@
                     <span class='absolute invisible' id='eye-open-pass-confirm'>&#128065;</span>
                 </button>
             </div>
+<<<<<<< HEAD
+            <div class="error-message">
+=======
             <div class="text-error-moderate h-3 pt-0.5 text-micro md:text-small">
+>>>>>>> 51dadadbc50128a6ab81f4d7091672c9353fd4e3
                 @error('passwordConfirm')
                     {{ $message }}
                 @enderror

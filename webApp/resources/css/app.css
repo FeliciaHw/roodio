@@ -47,4 +47,8 @@
     border-radius: 12px;
     zoom: .85;
   }
+
+  .error-message {
+    @apply text-error-moderate h-3 pt-0.5 text-micro md:text-small;
+  }
 }
