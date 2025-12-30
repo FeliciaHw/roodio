@@ -24,11 +24,27 @@
     src: url('../fonts/poppins.ttf');
 }
 
+// custom css
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: "border-box";
+  }
+}
+
 @layer components {
+  .container-body {
+    max-width: 2560px;
+    min-height: 100dvh;
+    overflow-x: hidden;
+    @apply bg-primary-100;
+  }
+
   .datepicker-picker {
     background: #ffffff !important;
     border: 1px solid #e5e7eb !important;
     border-radius: 12px;
-    zoom: .8;
+    zoom: .85;
   }
 }

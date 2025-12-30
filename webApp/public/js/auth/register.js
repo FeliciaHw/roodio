@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  //change style for field dob, gender, and country when they have been filled
   const setupSelect = (id) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupSelect('gender');
   setupSelect('country');
   
+  // modification style for date-picker
   const input = document.getElementById('default-datepicker');
   if (!input) return;
 

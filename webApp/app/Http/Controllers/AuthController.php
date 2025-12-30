@@ -26,4 +26,40 @@ class AuthController extends Controller
 
         return back()->with('failed', 'Failed to login!');
     }
+
+    public function registerView()
+    {
+        return view('auth.register');
+    }
+
+    public function register()
+    {
+        
+        
+        return redirect()->route('otp');
+    }
+
+    public function otpView()
+    {
+        return view('auth.otp');
+    }
+
+    public function otp() 
+    {
+        
+        
+        return redirect()->route('account');
+    }
+
+    public function accountView()
+    {
+        return view('auth.account');
+    }
+
+    public function account()
+    {
+        
+
+        return redirect()->route('login');
+    }
 }
