@@ -1,5 +1,5 @@
 <h2>Your OTP Code</h2>
-<p>Use this code to continue:</p>
+<p style="background-color: #90941b;">Use this code to continue:</p>
 
 <h1>{{ $otp }}</h1>
 
