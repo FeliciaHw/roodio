@@ -118,22 +118,22 @@
     </div>
     <div class='content'>
         <p>Dear 
-            <b class='dark-bold'>Mr.
-                {{-- {{ if ($gender == 1) {
+            <b class='dark-bold'>
+                {{ if ($gender == 1) {
                     echo('Mr.')
                 } elseif ($gender == 0) {
                     echo('Ms.')
                 }else {
                     echo('')
-                } }} --}}
+                } }}
             </b>
-            <b>Andi Zulfikar</b>,
+            <b>{{ Str::upper($fullname) }}</b>,
         </p>
         <br>
         <br>
         <p>You recently requested a <b>One-Time Password (OTP)</b> to continue with your authentication process. Please use the code below to complete the verification.</p>
         <div class='code-container'>
-            <div class='code'>123456</div>
+            <div class='code'>{{ $otp }}</div>
         </div>
         <p>This code is valid <b>for 5 minutes only</b>. For your security, <b>please do not share this OTP with anyone</b>. Our team will never ask for your OTP by email, phone, or any other method.</p>
         <br>
@@ -171,12 +171,3 @@
 
     </div>
 </div>
-
-
-
-{{-- <h2>Your OTP Code</h2>
-<p>Use this code to continue:</p>
-
-<h1>{{ $otp }}</h1>
-
-<p>This code expires in 5 minutes.</p> --}}
