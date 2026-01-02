@@ -74,7 +74,7 @@ class AuthController extends Controller
 
         session()->put('register.step1', $validated);
 
-        $otpController->send($validated['email']);
+        $otpController->send($validated['email'], $validated['fullname'], $validated['gender']);
 
         session(['user_verification_passed' => true]);
 

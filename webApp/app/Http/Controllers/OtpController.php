@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Mail;
 
 class OtpController extends Controller
 {
-    public function send(string $email)
+    public function send(string $email, string $fullname, int $gender)
     {
         $otp = random_int(100000, 999999);
 
@@ -17,7 +17,7 @@ class OtpController extends Controller
             now()->addMinutes(5)
         );
 
-        Mail::to($email)->send(new EmailOtp($otp));
+        Mail::to($email)->send(new EmailOtp($otp, $fullname, $gender));
     }
 
     public function verify(string $email, string $inputOtp)

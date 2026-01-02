@@ -51,14 +51,14 @@
         font-size: 1rem;
         text-align: justify;
         border: 1px dashed #142C80;
-        border-radius: .5rem; 
+        border-radius: .5rem;
         padding: .75rem;
     }
 
     b:not(.dark-bold) {
         color: #FF8E2B;
     }
-    
+
     p {
         line-height: 1.5rem;
     }
@@ -111,21 +111,27 @@
     }
 </style>
 
+@php
+    $title = '';
+
+    if ($gender == 1) {
+        $title = 'Mr.';
+    } elseif ($gender == 0) {
+        $title = 'Ms.';
+    }else {
+        $title = '';
+    };
+@endphp
+
 <div class='container'>
     <div class='header'>
         <img src="{{ asset('assets/logo-with-text.png') }}" alt="logo" class='logo'>
         <p>TWO WAY VERIFICATION</p>
     </div>
     <div class='content'>
-        <p>Dear 
+        <p>Dear
             <b class='dark-bold'>
-                {{ if ($gender == 1) {
-                    echo('Mr.')
-                } elseif ($gender == 0) {
-                    echo('Ms.')
-                }else {
-                    echo('')
-                } }}
+                {{ $title }}
             </b>
             <b>{{ Str::upper($fullname) }}</b>,
         </p>

@@ -14,7 +14,7 @@ class EmailOtp extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct(public int $otp)
+    public function __construct(public int $otp, public string $fullname, public int $gender)
     {
         //
     }
