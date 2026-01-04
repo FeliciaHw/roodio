@@ -27,9 +27,9 @@ return new class extends Migration
                 ->noActionOnUpdate();
             $table->string('title', 255);
             $table->text('lyrics');
-            $table->string('artis', 255);
+            $table->string('artist', 255);
             $table->string('genre', 255);
-            $table->time('duration');
+            $table->integer('duration');
             $table->string('publisher', 255);
             $table->date('datePublished');
             $table->string('songPath', 255);

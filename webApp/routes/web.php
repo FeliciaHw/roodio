@@ -14,6 +14,7 @@ Route::get('/', function () {
 Route::prefix('admin/songs')->middleware(['auth', 'role:1'])->group(function () {
     Route::get('', [SongController::class, 'index'])->name('admin.songs.index');
     Route::get('/create', [SongController::class, 'create'])->name('admin.songs.create');
+    Route::post('/create', [SongController::class, 'store'])->name('admin.songs.store');
 });
 
 // Auth Route
