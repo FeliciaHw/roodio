@@ -10,10 +10,10 @@
 
 
 @section('headContent')
-    <div class='w-full animate-pulse flex flex-row h-max items-center justify-center font-primary text-title font-bold text-primary-85 md:text-hero'>
+    <div class='w-full flex flex-row h-max items-center justify-center font-primary text-title font-bold text-primary-70 md:text-hero animate-pulse'>
         <span>L</span>
-        <div class='rounded-full w-12 h-12 bg-primary-70 flex justify-center items-center mx-2 md:w-16 md:h-16'>
-            <img src="{{ asset('assets/logo-no-text.png') }}" alt="logo" class='w-6 animate-spin bg-amber-200 rounded-full drop-shadow-md/70 drop-shadow-white/70 md:w-8'>
+        <div class='rounded-full w-12 h-12 bg-[conic-gradient(from_0deg,#7591DB_0%,#1F3A98_25%,#7591DB_50%,#1F3A98_75%,#7591DB_100%)] flex justify-center items-center mx-2 animate-spin md:w-16 md:h-16 border-2 border-primary-70'>
+            <img src="{{ asset('assets/logo-no-text.png') }}" alt="logo" class='w-6 bg-secondary-happy-60 rounded-full md:w-8'>
         </div>
         <span class='tracking-[.5rem]'>GI</span>
         <span>N</span>
