@@ -1,5 +1,3 @@
-@vite(['resources/css/app.css', 'resources/js/app.js'])
-
 @props([
     'route' => 'welcome',
     'icon' => 'home',
