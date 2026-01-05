@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Middleware\RoleMidleware;
 use App\Providers\AzureFilesystemServiceProvider;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -9,6 +8,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 return Application::configure(basePath: dirname(__DIR__))
     ->withProviders([
         AzureFilesystemServiceProvider::class,
+        \App\Providers\AppServiceProvider::class,
     ])
     ->withRouting(
         web: __DIR__ . '/../routes/web.php',
@@ -18,9 +18,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
             'register.step' => \App\Http\Middleware\EnsureRegistrationStep::class,
-        ]);
-        $middleware->alias([
-            'role' => RoleMidleware::class,
+            'role'          => \App\Http\Middleware\RoleMidleware::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

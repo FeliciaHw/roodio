@@ -44,10 +44,10 @@
                 </div>
                 <x-inputSelect id='country' icon='country' label='Country' class='country-select' defaultOption='Your country...'>
                     <x-slot:options>
-                        {{-- @forelse($regions as $region)
+                        @forelse($regions as $region)
                             <option value="{{ $region->id }}" {{ old('country') == $region->id ? 'selected' : '' }}>{{ $region->name }}</option>
                         @empty
-                        @endforelse --}}
+                        @endforelse
                     </x-slot:options>
                 </x-inputSelect>
             </div>
