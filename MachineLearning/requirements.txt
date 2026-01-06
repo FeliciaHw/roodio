@@ -31,3 +31,6 @@ python-multipart
 tensorflow-cpu
 requests
 h5py
+
+# ========== Lyrics ==========
+nltk
